@@ -3,105 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vinze - Front-End Developer | Engineering Notebook (@miloshake)</title>
+  <title>Vinze - Front-End Developer | Notebook Collage (@miloshake)</title>
   <meta
     name="description"
     content="Portfolio of Vinze Norbert Siega (Miloshake) — Front-End & Full-Stack Developer, Software QA & Systems Enthusiast at Central Luzon State University (CLSU)."
   />
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts: Plus Jakarta Sans, JetBrains Mono & Caveat (Handwritten Collage Notes) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Sticky Notebook Index Bar -->
+  <!-- Sticky Scrapbook Index Bar -->
   <header class="top-bar" role="banner">
     <a href="#index" class="brand-mark">
-      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-sticker">VINZE</span>
       <span>Vinze — Front-End Developer</span>
       <span class="brand-handle">@miloshake</span>
     </a>
 
-    <nav aria-label="Notebook Sections">
+    <nav aria-label="Scrapbook Sections">
       <ul class="notebook-tabs">
-        <li><a href="#index" class="active"><span class="tab-num">01</span>Index</a></li>
-        <li><a href="#projects"><span class="tab-num">02</span>Projects</a></li>
-        <li><a href="#stack"><span class="tab-num">03</span>Stack &amp; QA</a></li>
-        <li><a href="#education"><span class="tab-num">04</span>Log &amp; Notes</a></li>
-        <li><a href="#contact"><span class="tab-num">05</span>Contact</a></li>
+        <li><a href="#index" class="active"><span class="tab-num">01</span>Dossier</a></li>
+        <li><a href="#projects"><span class="tab-num">02</span>Cutouts</a></li>
+        <li><a href="#stack"><span class="tab-num">03</span>Stack</a></li>
+        <li><a href="#education"><span class="tab-num">04</span>Scrapbook</a></li>
+        <li><a href="#contact"><span class="tab-num">05</span>Postcard</a></li>
       </ul>
     </nav>
 
     <div class="top-actions">
-      <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle notebook theme">
+      <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle collage board theme">
         <span aria-hidden="true">◐</span>
-        <span id="theme-label">INK: PAPER</span>
+        <span id="theme-label">BOARD: PAPER COLLAGE</span>
       </button>
     </div>
   </header>
 
-  <!-- Main Engineering Notebook Sheet -->
-  <main class="notebook-sheet" id="index">
-    <!-- Left Margin Line & Binder Holes -->
-    <div class="notebook-margin-line" aria-hidden="true"></div>
-    <div class="binder-holes" aria-hidden="true">
-      <span class="binder-hole"></span>
-      <span class="binder-hole"></span>
-      <span class="binder-hole"></span>
-      <span class="binder-hole"></span>
-      <span class="binder-hole"></span>
-    </div>
+  <!-- Main Collage Board -->
+  <main class="collage-board" id="index">
+    <!-- 01 // Hero Collage Spread (Lined Notebook Cutout + Polaroid & Sticky Note) -->
+    <section class="hero-collage" aria-labelledby="hero-heading">
+      <!-- Left Cutout: Lined Notebook Sheet with Washi Tape -->
+      <div class="hero-main-cutout">
+        <span class="washi-tape top-center" aria-hidden="true"></span>
 
-    <div class="sheet-inner">
-      <!-- Top Sheet Metadata -->
-      <div class="sheet-meta">
-        <div class="meta-group">
-          <span>DOC // VINZE-PORTFOLIO-V1</span>
-          <span>INST // CLSU — BSIT</span>
-          <span>LOC // NUEVA ECIJA, PH</span>
+        <div class="cutout-stamp-row">
+          <span class="stamp-badge">FIELD LOG // CLSU-BSIT</span>
+          <span class="hand-note">✎ sky-blue sketchbook edition</span>
         </div>
-        <span class="status-pill">
-          <span class="status-dot"></span>
-          Available for Front-End, Full-Stack &amp; QA Roles
-        </span>
-      </div>
 
-      <!-- 01 // Hero & Bio -->
-      <section class="hero-section" aria-labelledby="hero-heading">
-        <span class="hero-eyebrow">01 // Field Profile &amp; Overview</span>
         <h1 class="hero-title" id="hero-heading">
-          Vinze Norbert Siega <span class="sky-highlight">(Miloshake)</span>
+          Vinze Norbert Siega <span class="sky-marker">(Miloshake)</span>
         </h1>
-        <p class="hero-subtitle">
-          <span>Vinze — Front-End Developer</span>
-          <span class="divider">/</span>
-          <span>Full-Stack Web &amp; Relational Architecture</span>
-          <span class="divider">/</span>
-          <span>Software QA &amp; Systems Enthusiast</span>
-        </p>
+
+        <div class="hero-role-strip">
+          <span class="role-pill">Vinze — Front-End Developer</span>
+          <span>• Full-Stack Web</span>
+          <span>• Software QA &amp; Systems Enthusiast</span>
+        </div>
 
         <p class="hero-bio">
           Undergraduate Information Technology student at <strong>Central Luzon State University (CLSU)</strong>
-          crafting responsive, utility-driven user interfaces (<strong>React.js, Inertia.js, Tailwind CSS</strong>)
-          backed by structured server-side logic and relational database architecture (<strong>PHP/Laravel, Java, MySQL</strong>).
-          Grounded in systematic Software Quality Assurance practices (<strong>IEEE 829 / ISTQB test documentation</strong> and automated testing),
-          local environment tuning, and network infrastructure design.
+          bridging responsive, utility-driven interfaces (<strong>React.js, Inertia.js, Tailwind CSS</strong>)
+          with structured backend logic and relational databases (<strong>PHP/Laravel, Java, MySQL</strong>).
+          Grounded in systematic Software QA (<strong>IEEE 829 / ISTQB documentation</strong> &amp; automated testing),
+          local multi-instance server tuning, and network rack architecture.
         </p>
 
-        <div class="focus-strip" aria-label="Focus Areas">
-          <span class="focus-tag">Front-End &amp; Full-Stack Web</span>
-          <span class="focus-tag">Relational Database Architecture</span>
-          <span class="focus-tag">Software QA &amp; Testing (IEEE 829 / ISTQB)</span>
-          <span class="focus-tag">Legacy System Migration</span>
-          <span class="focus-tag">IDF/MDF Network Rack Layouts</span>
+        <div class="focus-stickers" aria-label="Focus Area Stickers">
+          <span class="sticker-tag">✦ Front-End &amp; Full-Stack Web</span>
+          <span class="sticker-tag">✦ Relational DB Architecture</span>
+          <span class="sticker-tag">✦ Software QA (IEEE 829 / ISTQB)</span>
+          <span class="sticker-tag">✦ Legacy System Migration</span>
+          <span class="sticker-tag">✦ IDF/MDF Network Rack Layouts</span>
         </div>
 
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Browse 09 Logged Projects ↓</a>
+          <a href="#projects" class="btn btn-primary">Explore 09 Clipped Projects ↓</a>
           <a href="https://github.com/miloshake" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             GitHub (@miloshake) ↗
           </a>
@@ -117,294 +100,333 @@
             siegavinze@gmail.com
           </a>
         </div>
-      </section>
+      </div>
 
-      <!-- 02 // Key Projects -->
-      <section class="notebook-section" id="projects" aria-labelledby="projects-heading">
-        <div class="section-header">
-          <div>
-            <span class="section-index">02 // Project Index &amp; Architecture Logs</span>
-            <h2 class="section-title" id="projects-heading">Selected Engineering Work</h2>
+      <!-- Right Stack: Tilted Polaroid Snapshot + Sky-Blue Sticky Note -->
+      <aside class="hero-side-stack" aria-label="Quick Stats Polaroid and Margin Note">
+        <div class="polaroid-card">
+          <span class="washi-tape top-right" aria-hidden="true"></span>
+          <div class="polaroid-window">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+              <strong>ID // MILOSHAKE</strong>
+              <span>NUEVA ECIJA, PH</span>
+            </div>
+            <div>DEPT // CLSU College of Engineering (IT)</div>
+            <div class="polaroid-stat-grid">
+              <div class="stat-box">
+                <strong>09</strong>
+                <span>Pinned Projects</span>
+              </div>
+              <div class="stat-box">
+                <strong>:3307</strong>
+                <span>MySQL Multi-Instance</span>
+              </div>
+              <div class="stat-box">
+                <strong>ISTQB</strong>
+                <span>&amp; IEEE 829 QA</span>
+              </div>
+              <div class="stat-box">
+                <strong>Azure B1</strong>
+                <span>Cloud Deployment</span>
+              </div>
+            </div>
           </div>
-          <span class="section-note" id="project-count-note">SHOWING 09 / 09 ENTRIES</span>
+          <div class="polaroid-caption">"clean UI on the surface, structured SQL underneath"</div>
         </div>
 
-        <div class="project-controls">
-          <div class="filter-tabs" role="tablist" aria-label="Filter projects by domain">
-            <button type="button" class="filter-btn active" data-filter="all">All Entries (9)</button>
-            <button type="button" class="filter-btn" data-filter="fullstack">Web &amp; Full-Stack</button>
-            <button type="button" class="filter-btn" data-filter="cloud">Cloud &amp; E-Commerce</button>
-            <button type="button" class="filter-btn" data-filter="systems">Database, Desktop &amp; Network</button>
-          </div>
+        <div class="sky-sticky-note">
+          <span class="washi-tape top-left neutral" aria-hidden="true"></span>
+          <p>
+            📌 Currently modernizing legacy procedural PHP apps into reactive <strong>Laravel + Inertia + React</strong> SPAs &amp; building sleek front-end experiences!
+          </p>
+        </div>
+      </aside>
+    </section>
 
-          <div class="search-box">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <input
-              type="search"
-              id="project-search"
-              placeholder="Filter by stack or keyword..."
-              aria-label="Filter projects by keyword or tech stack"
-            />
-          </div>
+    <!-- 02 // Key Projects Collage Grid -->
+    <section class="collage-section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-header">
+        <div class="section-label-cutout">
+          <span class="section-index">02 // Clipped Project Cutouts</span>
+          <h2 class="section-title" id="projects-heading">Selected Works &amp; Case Files</h2>
+        </div>
+        <span class="section-note" id="project-count-note">✎ pinned 9 of 9 cutouts</span>
+      </div>
+
+      <div class="project-controls">
+        <div class="filter-tabs" role="tablist" aria-label="Filter project cutouts by category">
+          <button type="button" class="filter-btn active" data-filter="all">All Cutouts (9)</button>
+          <button type="button" class="filter-btn" data-filter="fullstack">Web &amp; Full-Stack</button>
+          <button type="button" class="filter-btn" data-filter="cloud">Cloud &amp; E-Commerce</button>
+          <button type="button" class="filter-btn" data-filter="systems">Database, Desktop &amp; Network</button>
         </div>
 
-        <!-- Populated by script.js -->
-        <div class="projects-grid" id="projects-grid"></div>
-      </section>
-
-      <!-- 03 // Technical Skills & QA Tools -->
-      <section class="notebook-section" id="stack" aria-labelledby="stack-heading">
-        <div class="section-header">
-          <div>
-            <span class="section-index">03 // Technical Inventory &amp; QA Standards</span>
-            <h2 class="section-title" id="stack-heading">Skills, Frameworks &amp; Tooling</h2>
-          </div>
-          <span class="section-note">ORGANIZED BY LAYER // 08 CATEGORIES</span>
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="project-search"
+            placeholder="Search stack or project..."
+            aria-label="Filter projects by keyword or tech stack"
+          />
         </div>
+      </div>
 
-        <div class="skills-ledger">
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Front-End &amp; Frameworks</span>
-              <span class="skill-group-code">UI // SPA</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip highlight">React.js</span>
-              <span class="skill-chip highlight">Tailwind CSS</span>
-              <span class="skill-chip highlight">Inertia.js</span>
-              <span class="skill-chip">JavaScript (ES6+)</span>
-              <span class="skill-chip">HTML5</span>
-              <span class="skill-chip">CSS3</span>
-              <span class="skill-chip">Bootstrap</span>
-              <span class="skill-chip">Vite</span>
-            </div>
-          </div>
+      <!-- Populated by script.js -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
 
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Backend &amp; Languages</span>
-              <span class="skill-group-code">SRV // CORE</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip highlight">Laravel</span>
-              <span class="skill-chip highlight">PHP</span>
-              <span class="skill-chip">Java (Swing UI)</span>
-              <span class="skill-chip">SQL (DDL/DML)</span>
-              <span class="skill-chip">C</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Databases &amp; Local Stack</span>
-              <span class="skill-group-code">DB // :3307</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip highlight">MySQL (Port 3307 / Multi-instance)</span>
-              <span class="skill-chip">MariaDB</span>
-              <span class="skill-chip">Apache</span>
-              <span class="skill-chip">Laragon</span>
-              <span class="skill-chip">XAMPP</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Quality Assurance</span>
-              <span class="skill-group-code">QA // TEST</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip highlight">IEEE 829 Documentation</span>
-              <span class="skill-chip highlight">ISTQB Test Methodology</span>
-              <span class="skill-chip">LambdaTest KaneAI</span>
-              <span class="skill-chip">Manual Test Suite Execution</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Cloud &amp; Deployment</span>
-              <span class="skill-group-code">OPS // CLOUD</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip highlight">Microsoft Azure (B1 VM)</span>
-              <span class="skill-chip">GitHub Pages</span>
-              <span class="skill-chip">SSH Administration</span>
-              <span class="skill-chip">Name.com DNS &amp; SSL</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>CMS &amp; E-Commerce</span>
-              <span class="skill-group-code">CMS // WEB</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip">WordPress</span>
-              <span class="skill-chip">WooCommerce</span>
-              <span class="skill-chip">Blocksy</span>
-              <span class="skill-chip">Spectra</span>
-              <span class="skill-chip">Patchstack Security</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Developer Tools</span>
-              <span class="skill-group-code">ENV // IDE</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip">VS Code</span>
-              <span class="skill-chip">Antigravity IDE</span>
-              <span class="skill-chip">PhpStorm</span>
-              <span class="skill-chip">NetBeans</span>
-              <span class="skill-chip">Git &amp; GitHub</span>
-              <span class="skill-chip">draw.io</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <span class="skill-group-title"><span class="skill-group-dot"></span>Operating Systems</span>
-              <span class="skill-group-code">SYS // OS</span>
-            </div>
-            <div class="skill-items">
-              <span class="skill-chip">Windows 11</span>
-              <span class="skill-chip">Linux Mint</span>
-              <span class="skill-chip">Ubuntu / Debian Server CLI</span>
-            </div>
-          </div>
+    <!-- 03 // Technical Skills & QA Stickers -->
+    <section class="collage-section" id="stack" aria-labelledby="stack-heading">
+      <div class="section-header">
+        <div class="section-label-cutout">
+          <span class="section-index">03 // Tooling &amp; QA Stickers</span>
+          <h2 class="section-title" id="stack-heading">Technical Stack &amp; Standards</h2>
         </div>
-      </section>
+        <span class="section-note">✎ 08 taped index cards</span>
+      </div>
 
-      <!-- 04 // Education, Milestones & Off-Duty Workbench -->
-      <section class="notebook-section" id="education" aria-labelledby="education-heading">
-        <div class="section-header">
-          <div>
-            <span class="section-index">04 // Academic Log &amp; Personal Workbench</span>
-            <h2 class="section-title" id="education-heading">Education, Milestones &amp; Field Notes</h2>
+      <div class="skills-ledger">
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Front-End &amp; UI</span>
+            <span class="skill-group-code">UI // SPA</span>
           </div>
-          <span class="section-note">CLSU // HARDWARE &amp; HOBBIES</span>
-        </div>
-
-        <div class="two-col-notebook">
-          <!-- Academic & Professional Milestones -->
-          <div class="notebook-panel">
-            <div class="panel-label">
-              <span>■ Academic &amp; Engineering Milestones</span>
-            </div>
-            <ul class="timeline-list">
-              <li class="timeline-item">
-                <div class="timeline-title">Bachelor of Science in Information Technology (BSIT)</div>
-                <div class="timeline-sub">Central Luzon State University (CLSU)</div>
-                <div class="timeline-meta">
-                  College of Engineering — Dept. of Information Technology • Science City of Muñoz, Nueva Ecija
-                </div>
-              </li>
-              <li class="timeline-item">
-                <div class="timeline-title">Software QA &amp; Testing Standards</div>
-                <div class="timeline-sub">IEEE 829 &amp; ISTQB Lifecycle Practice</div>
-                <div class="timeline-meta">
-                  Structured test plan authoring, test case specifications, defect reporting, and automated verification with KaneAI.
-                </div>
-              </li>
-              <li class="timeline-item">
-                <div class="timeline-title">Startup 100 Webinar</div>
-                <div class="timeline-sub">Department of Information and Communications Technology (DICT) Region 3</div>
-                <div class="timeline-meta">Technical &amp; Product Seminar</div>
-              </li>
-              <li class="timeline-item">
-                <div class="timeline-title">iThink Code Camp</div>
-                <div class="timeline-sub">Central Luzon State University</div>
-                <div class="timeline-meta">Programming &amp; Software Engineering Camp</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Off-Duty Workbench & Interests -->
-          <div class="notebook-panel">
-            <div class="panel-label">
-              <span>■ Off-Duty Workbench &amp; Margin Notes</span>
-            </div>
-            <ul class="field-notes-list">
-              <li class="field-note-item">
-                <span class="field-note-tag">MODDING</span>
-                <div>
-                  <strong>Arcade Controller Hardware Modding</strong> — Customizing Sanwa JLF levers, tension springs, switches, and chassis tuning.
-                </div>
-              </li>
-              <li class="field-note-item">
-                <span class="field-note-tag">COMPETITIVE</span>
-                <div>
-                  <strong>Fighting &amp; Rhythm Games</strong> — Frame-data labbing in <em>Tekken 8</em> and high-BPM precision in <em>osu!mania</em> &amp; <em>Arcaea</em>.
-                </div>
-              </li>
-              <li class="field-note-item">
-                <span class="field-note-tag">KEYS</span>
-                <div>
-                  <strong>Digital Piano</strong> — Practicing and playing on a weighted <em>Roland FP-10</em>.
-                </div>
-              </li>
-              <li class="field-note-item">
-                <span class="field-note-tag">RIGS</span>
-                <div>
-                  <strong>Desktop Hardware &amp; Cinema</strong> — PC building, thermal/component diagnostics, and film appreciation.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 05 // Contact & Links -->
-      <section class="notebook-section" id="contact" aria-labelledby="contact-heading">
-        <div class="section-header">
-          <div>
-            <span class="section-index">05 // Correspondence &amp; Channels</span>
-            <h2 class="section-title" id="contact-heading">Get in Touch</h2>
-          </div>
-          <span class="section-note">DIRECT CHANNELS</span>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-info">
-            <h3>Let's build clean interfaces &amp; reliable systems.</h3>
-            <p>
-              Reach out for front-end or full-stack internships, collaborations, QA testing projects, or engineering discussions.
-            </p>
-          </div>
-          <div class="contact-links">
-            <button type="button" id="copy-email-btn" class="btn btn-primary">
-              Copy Email (siegavinze@gmail.com)
-            </button>
-            <a
-              href="https://github.com/miloshake"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-outline"
-            >
-              GitHub ↗
-            </a>
-            <a
-              href="https://www.linkedin.com/in/vinze-norbert-siega-01b058352/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-outline"
-            >
-              LinkedIn ↗
-            </a>
+          <div class="skill-items">
+            <span class="skill-chip highlight">React.js</span>
+            <span class="skill-chip highlight">Tailwind CSS</span>
+            <span class="skill-chip highlight">Inertia.js</span>
+            <span class="skill-chip">JavaScript (ES6+)</span>
+            <span class="skill-chip">HTML5</span>
+            <span class="skill-chip">CSS3</span>
+            <span class="skill-chip">Bootstrap</span>
+            <span class="skill-chip">Vite</span>
           </div>
         </div>
 
-        <footer class="sheet-footer">
-          <span>© 2026 Vinze Norbert Siega (Miloshake) • Front-End &amp; Full-Stack Developer</span>
-          <span>ENGINEERED WITH SLEEK NOTEBOOK UI • SKY BLUE EDITION</span>
-        </footer>
-      </section>
-    </div>
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Backend &amp; Languages</span>
+            <span class="skill-group-code">SRV // CORE</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip highlight">Laravel</span>
+            <span class="skill-chip highlight">PHP</span>
+            <span class="skill-chip">Java (Swing UI)</span>
+            <span class="skill-chip">SQL (DDL/DML)</span>
+            <span class="skill-chip">C</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Databases &amp; Local Stack</span>
+            <span class="skill-group-code">DB // :3307</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip highlight">MySQL (Port 3307 / Multi-instance)</span>
+            <span class="skill-chip">MariaDB</span>
+            <span class="skill-chip">Apache</span>
+            <span class="skill-chip">Laragon</span>
+            <span class="skill-chip">XAMPP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Quality Assurance</span>
+            <span class="skill-group-code">QA // TEST</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip highlight">IEEE 829 Documentation</span>
+            <span class="skill-chip highlight">ISTQB Test Methodology</span>
+            <span class="skill-chip">LambdaTest KaneAI</span>
+            <span class="skill-chip">Manual Test Suite Execution</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Cloud &amp; Deployment</span>
+            <span class="skill-group-code">OPS // CLOUD</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip highlight">Microsoft Azure (B1 VM)</span>
+            <span class="skill-chip">GitHub Pages</span>
+            <span class="skill-chip">SSH Administration</span>
+            <span class="skill-chip">Name.com DNS &amp; SSL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">CMS &amp; E-Commerce</span>
+            <span class="skill-group-code">CMS // WEB</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip">WordPress</span>
+            <span class="skill-chip">WooCommerce</span>
+            <span class="skill-chip">Blocksy</span>
+            <span class="skill-chip">Spectra</span>
+            <span class="skill-chip">Patchstack Security</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Developer Tools</span>
+            <span class="skill-group-code">ENV // IDE</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip">VS Code</span>
+            <span class="skill-chip">Antigravity IDE</span>
+            <span class="skill-chip">PhpStorm</span>
+            <span class="skill-chip">NetBeans</span>
+            <span class="skill-chip">Git &amp; GitHub</span>
+            <span class="skill-chip">draw.io</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <span class="skill-group-title">Operating Systems</span>
+            <span class="skill-group-code">SYS // OS</span>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip">Windows 11</span>
+            <span class="skill-chip">Linux Mint</span>
+            <span class="skill-chip">Ubuntu / Debian Server CLI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 // Scrapbook Log: Education & Off-Duty Workbench -->
+    <section class="collage-section" id="education" aria-labelledby="education-heading">
+      <div class="section-header">
+        <div class="section-label-cutout">
+          <span class="section-index">04 // Academic Log &amp; Personal Scrapbook</span>
+          <h2 class="section-title" id="education-heading">Milestones &amp; Off-Duty Workbench</h2>
+        </div>
+        <span class="section-note">✎ life outside the terminal</span>
+      </div>
+
+      <div class="two-col-notebook">
+        <!-- Left Scrapbook Sheet: Education & Seminars -->
+        <div class="notebook-panel tilted-left">
+          <span class="washi-tape top-left" aria-hidden="true"></span>
+          <div class="panel-label">📌 Academic &amp; Engineering Milestones</div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <div class="timeline-title">Bachelor of Science in Information Technology (BSIT)</div>
+              <div class="timeline-sub">Central Luzon State University (CLSU)</div>
+              <div class="timeline-meta">
+                College of Engineering — Dept. of Information Technology • Science City of Muñoz, Nueva Ecija
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-title">Software QA &amp; Testing Standards</div>
+              <div class="timeline-sub">IEEE 829 &amp; ISTQB Lifecycle Practice</div>
+              <div class="timeline-meta">
+                Structured test plan authoring, test case specifications, defect reporting, and automated verification with KaneAI.
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-title">Startup 100 Webinar</div>
+              <div class="timeline-sub">Department of Information and Communications Technology (DICT) Region 3</div>
+              <div class="timeline-meta">Technical &amp; Product Seminar</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-title">iThink Code Camp</div>
+              <div class="timeline-sub">Central Luzon State University</div>
+              <div class="timeline-meta">Programming &amp; Software Engineering Camp</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Scrapbook Sheet: Off-Duty Hobbies & Hardware Modding -->
+        <div class="notebook-panel tilted-right">
+          <span class="washi-tape top-right neutral" aria-hidden="true"></span>
+          <div class="panel-label">🕹️ Off-Duty Workbench &amp; Clippings</div>
+          <ul class="field-notes-list">
+            <li class="field-note-item">
+              <span class="field-note-tag">MODDING</span>
+              <div>
+                <strong>Arcade Controller Hardware Modding</strong> — Customizing Sanwa JLF levers, tension springs, switches, and arcade stick chassis tuning.
+              </div>
+            </li>
+            <li class="field-note-item">
+              <span class="field-note-tag">FGC / RHYTHM</span>
+              <div>
+                <strong>Competitive Gaming</strong> — Frame-data labbing in <em>Tekken 8</em> and high-BPM precision in <em>osu!mania</em> &amp; <em>Arcaea</em>.
+              </div>
+            </li>
+            <li class="field-note-item">
+              <span class="field-note-tag">KEYS</span>
+              <div>
+                <strong>Digital Piano</strong> — Practicing pieces on a weighted 88-key <em>Roland FP-10</em>.
+              </div>
+            </li>
+            <li class="field-note-item">
+              <span class="field-note-tag">RIGS &amp; FILM</span>
+              <div>
+                <strong>Desktop Hardware &amp; Cinema</strong> — PC component troubleshooting, custom builds, and cinema appreciation.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 // Postcard Contact Cutout -->
+    <section class="collage-section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-header">
+        <div class="section-label-cutout">
+          <span class="section-index">05 // Airmail Postcard</span>
+          <h2 class="section-title" id="contact-heading">Send a Note</h2>
+        </div>
+        <span class="section-note">✎ open for opportunities</span>
+      </div>
+
+      <div class="contact-card">
+        <span class="washi-tape top-center" aria-hidden="true"></span>
+        <div class="contact-info">
+          <h3>Let's craft responsive UIs &amp; dependable systems.</h3>
+          <p>
+            Available for front-end or full-stack internships, software QA testing projects, and developer collaborations.
+          </p>
+        </div>
+        <div class="contact-links">
+          <button type="button" id="copy-email-btn" class="btn btn-primary">
+            Copy Email (siegavinze@gmail.com)
+          </button>
+          <a
+            href="https://github.com/miloshake"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+          >
+            GitHub ↗
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vinze-norbert-siega-01b058352/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
+      </div>
+
+      <footer class="sheet-footer">
+        <span>© 2026 Vinze Norbert Siega (Miloshake) • Front-End &amp; Full-Stack Developer</span>
+        <span>SLEEK NOTEBOOK COLLAGE EDITION • SKY BLUE ACCENTS</span>
+      </footer>
+    </section>
   </main>
 
-  <!-- Interactive Project Specification Modal -->
+  <!-- Interactive Clipped Project Specification Modal -->
   <div
     class="spec-modal-backdrop"
     id="spec-modal-backdrop"
@@ -414,15 +436,16 @@
     aria-labelledby="modal-title"
   >
     <div class="spec-modal">
+      <span class="washi-tape top-center" aria-hidden="true"></span>
       <div class="modal-header">
         <div>
           <div class="card-meta" style="margin-bottom: 0.4rem;">
-            <span class="card-code" id="modal-code">PRJ-01</span>
+            <span class="card-code" id="modal-code">CUTOUT-01</span>
             <span class="card-category" id="modal-category">Full-Stack</span>
           </div>
-          <h3 id="modal-title" style="font-size: 1.25rem; font-weight: 800;">Project Title</h3>
+          <h3 id="modal-title" style="font-size: 1.3rem; font-weight: 800;">Project Title</h3>
         </div>
-        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close specification sheet">
+        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close clipped notes">
           ✕
         </button>
       </div>
@@ -451,11 +474,14 @@
         <div class="skill-items" id="modal-stack"></div>
       </div>
 
-      <div class="hero-actions" id="modal-links" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--rule-line);"></div>
+      <div
+        class="hero-actions"
+        id="modal-links"
+        style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1.5px dashed var(--cutout-border);"
+      ></div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-

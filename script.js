@@ -1,8 +1,8 @@
 const PROJECTS = [
   {
-    id: "PRJ-01",
+    id: "CUTOUT-01",
     title: "FinalTermLaravel",
-    subtitle: "Inventory System Migration",
+    subtitle: "↳ Legacy PHP to Laravel + Inertia.js SPA migration",
     category: "fullstack",
     categoryLabel: "Full-Stack / SPA",
     description:
@@ -18,9 +18,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-02",
+    id: "CUTOUT-02",
     title: "BuildIT (buildits.app)",
-    subtitle: "Cloud-Hosted PC E-Commerce Platform",
+    subtitle: "↳ Cloud PC storefront on Azure B1 VM",
     category: "cloud",
     categoryLabel: "Cloud / E-Commerce",
     description:
@@ -36,9 +36,9 @@ const PROJECTS = [
     liveUrl: "https://buildits.app"
   },
   {
-    id: "PRJ-03",
+    id: "CUTOUT-03",
     title: "KoneKT",
-    subtitle: "Talent Networking & Recruitment Platform",
+    subtitle: "↳ Talent directory & technical role matching",
     category: "fullstack",
     categoryLabel: "Web / Full-Stack",
     description:
@@ -54,9 +54,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-04",
+    id: "CUTOUT-04",
     title: "Conference Registration Monitoring",
-    subtitle: "Desktop Event Check-In Utility",
+    subtitle: "↳ Desktop real-time attendee verification",
     category: "systems",
     categoryLabel: "Desktop / Java",
     description:
@@ -72,9 +72,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-05",
+    id: "CUTOUT-05",
     title: "BankoSantiago",
-    subtitle: "Simulated Banking Transaction System",
+    subtitle: "↳ ACID-compliant banking transaction model",
     category: "fullstack",
     categoryLabel: "Backend / Security",
     description:
@@ -89,9 +89,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-06",
+    id: "CUTOUT-06",
     title: "Authio",
-    subtitle: "Modular Auth & Role-Based CRUD",
+    subtitle: "↳ Hardened authentication & RBAC starter",
     category: "fullstack",
     categoryLabel: "Security / Web",
     description:
@@ -106,9 +106,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-07",
+    id: "CUTOUT-07",
     title: "PolyCloth",
-    subtitle: "E-Commerce Apparel Storefront",
+    subtitle: "↳ Interactive apparel catalog & cart state",
     category: "cloud",
     categoryLabel: "E-Commerce / UI",
     description:
@@ -123,9 +123,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-08",
+    id: "CUTOUT-08",
     title: "PC Part Picker DB Schema",
-    subtitle: "5-Entity Relational Database Architecture",
+    subtitle: "↳ Normalized 5-entity hardware relational schema",
     category: "systems",
     categoryLabel: "Database Architecture",
     description:
@@ -140,9 +140,9 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "PRJ-09",
+    id: "CUTOUT-09",
     title: "CLSU CASS IDF/MDF Rack Design",
-    subtitle: "Network Infrastructure Elevation & Topology",
+    subtitle: "↳ Multi-floor academic network rack elevation",
     category: "systems",
     categoryLabel: "Network / Infrastructure",
     description:
@@ -192,16 +192,14 @@ function renderProjects() {
   });
 
   if (projectCountNote) {
-    projectCountNote.textContent = `SHOWING ${String(filtered.length).padStart(2, "0")} / ${String(
-      PROJECTS.length
-    ).padStart(2, "0")} ENTRIES`;
+    projectCountNote.textContent = `✎ pinned ${filtered.length} of ${PROJECTS.length} cutouts`;
   }
 
   if (filtered.length === 0) {
     projectsGrid.innerHTML = `
       <div class="notebook-panel" style="grid-column: 1 / -1; text-align: center; padding: 2.25rem;">
         <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
-          No notebook entries matched "${searchQuery}". Try clearing the filter.
+          No scrapbook cutouts matched "${searchQuery}". Try clearing the filter.
         </p>
       </div>
     `;
@@ -211,15 +209,15 @@ function renderProjects() {
   projectsGrid.innerHTML = filtered
     .map(
       (proj) => `
-      <article class="project-card" data-id="${proj.id}" tabindex="0" role="button" aria-label="Inspect ${proj.title} specifications">
+      <article class="project-card" data-id="${proj.id}" tabindex="0" role="button" aria-label="Inspect ${proj.title} cutout notes">
+        <span class="card-tape" aria-hidden="true"></span>
         <div class="card-top">
           <div class="card-meta">
             <span class="card-code">${proj.id}</span>
             <span class="card-category">${proj.categoryLabel}</span>
           </div>
-          <h3 class="card-title">
-            <span>${proj.title}</span>
-          </h3>
+          <h3 class="card-title">${proj.title}</h3>
+          <span class="card-hand-sub">${proj.subtitle}</span>
           <p class="card-desc">${proj.description}</p>
           <div class="card-problem-snippet">
             <strong>Problem Solved</strong>
@@ -234,7 +232,7 @@ function renderProjects() {
               .join("")}
             ${proj.stack.length > 5 ? `<span class="stack-pill">+${proj.stack.length - 5}</span>` : ""}
           </div>
-          <span class="card-inspect-link">Open Spec Sheet →</span>
+          <span class="card-inspect-link">Read Clipped Notes →</span>
         </div>
       </article>
     `
@@ -258,7 +256,7 @@ function openSpecModal(projectId) {
 
   modalCode.textContent = proj.id;
   modalCategory.textContent = proj.categoryLabel;
-  modalTitle.textContent = `${proj.title} — ${proj.subtitle}`;
+  modalTitle.textContent = proj.title;
   modalDesc.textContent = proj.description;
   modalProblem.textContent = proj.problem;
 
@@ -267,10 +265,10 @@ function openSpecModal(projectId) {
 
   let linksHtml = "";
   if (proj.liveUrl) {
-    linksHtml += `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Deployment ↗</a>`;
+    linksHtml += `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Site (buildits.app) ↗</a>`;
   }
   if (proj.github) {
-    linksHtml += `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile (@miloshake) ↗</a>`;
+    linksHtml += `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub (@miloshake) ↗</a>`;
   }
   modalLinks.innerHTML = linksHtml;
 
@@ -315,7 +313,7 @@ if (searchInput) {
   });
 }
 
-// Theme Toggle (Notebook Paper vs. Dark Slate Blueprint)
+// Theme Toggle (Daylight Scrapbook vs. Night Cutting Mat)
 const themeBtn = document.getElementById("theme-toggle");
 const themeLabel = document.getElementById("theme-label");
 
@@ -323,7 +321,7 @@ function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("vinze-notebook-theme", theme);
   if (themeLabel) {
-    themeLabel.textContent = theme === "dark" ? "INK: DARK PAD" : "INK: PAPER";
+    themeLabel.textContent = theme === "dark" ? "BOARD: NIGHT MAT" : "BOARD: PAPER COLLAGE";
   }
 }
 
@@ -357,4 +355,3 @@ if (copyEmailBtn) {
 
 // Initial render
 renderProjects();
-
