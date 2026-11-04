@@ -212,6 +212,10 @@ function renderProjects() {
       (proj) => `
       <article class="project-card" data-id="${proj.id}" tabindex="0" role="button" aria-label="View details for ${proj.title}">
         <span class="card-tape" aria-hidden="true"></span>
+        <div class="card-thumb">
+          <span>Screenshot placeholder<small>assets/projects/${proj.id.toLowerCase()}.png</small></span>
+          <img src="assets/projects/${proj.id.toLowerCase()}.png" alt="${proj.title} screenshot" loading="lazy" onerror="this.remove()" />
+        </div>
         <div class="card-top">
           <div class="card-meta">
             <span class="card-code">${proj.id}</span>
@@ -268,7 +272,10 @@ function openSpecModal(projectId) {
   if (proj.liveUrl) {
     linksHtml += `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Site (buildits.app) ↗</a>`;
   }
-  if (proj.github) {
+  // PLACEHOLDER: add `repo: "https://github.com/miloshake/<repo>"` to a project above to show a repository button
+  if (proj.repo) {
+    linksHtml += `<a href="${proj.repo}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View Repository ↗</a>`;
+  } else if (proj.github) {
     linksHtml += `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile ↗</a>`;
   }
   modalLinks.innerHTML = linksHtml;
