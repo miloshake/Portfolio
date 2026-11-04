@@ -1,14 +1,13 @@
 :root {
-  /* Light Theme — Tactile Desk & Collage Sketchbook */
-  --bg-desk: #f3f2ec;
+  /* Light Theme — Clean Tactile Desk & Collage Notebook */
+  --bg-desk: #f4f5f7;
   --bg-paper: #ffffff;
-  --bg-lined: #fcfbf7;
+  --bg-lined: #fafcff;
   --bg-sticky: #f0f9ff;
   --bg-kraft: #f8fafc;
-  --dot-color: rgba(100, 116, 139, 0.25);
-  --grid-line: rgba(14, 165, 233, 0.09);
-  --rule-line: #e2e8f0;
-  --red-margin: rgba(244, 63, 94, 0.22);
+  --dot-color: rgba(100, 116, 139, 0.22);
+  --grid-line: rgba(14, 165, 233, 0.06);
+  --rule-line: rgba(14, 165, 233, 0.1);
 
   /* Ink & Typography */
   --text-primary: #0f172a;
@@ -28,14 +27,14 @@
   --accent: #0ea5e9;
   --accent-strong: #0284c7;
   --tape-sky: rgba(56, 189, 248, 0.32);
-  --tape-border: rgba(14, 165, 233, 0.25);
-  --tape-neutral: rgba(226, 232, 240, 0.72);
+  --tape-border: rgba(14, 165, 233, 0.35);
+  --tape-neutral: rgba(203, 213, 225, 0.65);
 
-  /* Collage Shadows & Cutout Borders */
+  /* Crisp Cutout Borders & Stacked Paper Offset Shadows */
   --cutout-border: #cbd5e1;
-  --shadow-cutout: 2px 4px 12px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-lifted: 6px 14px 28px -4px rgba(14, 165, 233, 0.16), 2px 6px 14px rgba(15, 23, 42, 0.07);
-  --shadow-polaroid: 4px 8px 20px rgba(15, 23, 42, 0.09);
+  --paper-stack-shadow: 4px 4px 0px #dbeafe, 4px 4px 0px 1px #93c5fd;
+  --shadow-cutout: 0 2px 6px rgba(15, 23, 42, 0.04), 3px 3px 0px rgba(14, 165, 233, 0.14);
+  --shadow-lifted: 0 10px 24px -6px rgba(14, 165, 233, 0.18), 5px 5px 0px var(--sky-300);
 
   /* Fonts */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -44,16 +43,15 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Theme — Cutting Mat & Night Collage Board */
-  --bg-desk: #090e1a;
+  /* Dark Theme — Night Cutting Mat & Slate Collage Board */
+  --bg-desk: #090d16;
   --bg-paper: #111827;
   --bg-lined: #131c2e;
   --bg-sticky: #0f2238;
   --bg-kraft: #162033;
   --dot-color: rgba(148, 163, 184, 0.14);
-  --grid-line: rgba(56, 189, 248, 0.07);
-  --rule-line: #1e293b;
-  --red-margin: rgba(244, 63, 94, 0.25);
+  --grid-line: rgba(56, 189, 248, 0.05);
+  --rule-line: rgba(56, 189, 248, 0.08);
 
   --text-primary: #f1f5f9;
   --text-secondary: #cbd5e1;
@@ -62,17 +60,18 @@
 
   --sky-50: rgba(14, 165, 233, 0.12);
   --sky-100: rgba(14, 165, 233, 0.2);
-  --sky-200: rgba(56, 189, 248, 0.32);
+  --sky-200: rgba(56, 189, 248, 0.28);
+  --sky-300: rgba(56, 189, 248, 0.45);
   --accent: #38bdf8;
   --accent-strong: #7dd3fc;
-  --tape-sky: rgba(56, 189, 248, 0.28);
-  --tape-border: rgba(56, 189, 248, 0.35);
+  --tape-sky: rgba(56, 189, 248, 0.25);
+  --tape-border: rgba(56, 189, 248, 0.4);
   --tape-neutral: rgba(51, 65, 85, 0.65);
 
   --cutout-border: #263449;
-  --shadow-cutout: 3px 6px 18px rgba(0, 0, 0, 0.45);
-  --shadow-lifted: 6px 16px 32px rgba(56, 189, 248, 0.18), 0 8px 20px rgba(0, 0, 0, 0.55);
-  --shadow-polaroid: 4px 10px 24px rgba(0, 0, 0, 0.5);
+  --paper-stack-shadow: 4px 4px 0px rgba(14, 165, 233, 0.22);
+  --shadow-cutout: 0 4px 12px rgba(0, 0, 0, 0.35), 3px 3px 0px rgba(56, 189, 248, 0.2);
+  --shadow-lifted: 0 12px 28px rgba(0, 0, 0, 0.5), 5px 5px 0px rgba(56, 189, 248, 0.4);
 }
 
 *,
@@ -91,51 +90,35 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-desk);
-  /* Subtle cutting-mat / sketchbook dot + grid texture */
   background-image:
     radial-gradient(var(--dot-color) 1.15px, transparent 1.15px),
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 24px 24px, 96px 96px, 96px 96px;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
-  padding: 1.25rem 1rem 4.5rem;
+  padding: 1.25rem 1.25rem 4.5rem;
   overflow-x: hidden;
 }
 
 /* Sticky Scrapbook Tab Bar */
 .top-bar {
   max-width: 1100px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.6rem 1.15rem;
+  padding: 0.65rem 1.15rem;
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: var(--shadow-cutout);
   position: sticky;
   top: 0.75rem;
   z-index: 50;
-}
-
-/* Small Washi Tape on Top Bar */
-.top-bar::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 28px;
-  width: 68px;
-  height: 15px;
-  background: var(--tape-sky);
-  border-left: 1px dashed var(--tape-border);
-  border-right: 1px dashed var(--tape-border);
-  transform: rotate(-2deg);
-  pointer-events: none;
 }
 
 .brand-mark {
@@ -158,10 +141,9 @@ body {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 700;
-  padding: 0.15rem 0.45rem;
+  padding: 0.16rem 0.48rem;
   border-radius: 4px;
-  transform: rotate(-3deg);
-  box-shadow: 1px 2px 4px rgba(14, 165, 233, 0.3);
+  box-shadow: 2px 2px 0 rgba(2, 132, 199, 0.35);
 }
 
 .brand-handle {
@@ -170,7 +152,7 @@ body {
   font-weight: 600;
   color: var(--accent-strong);
   background: var(--sky-50);
-  padding: 0.12rem 0.5rem;
+  padding: 0.14rem 0.5rem;
   border-radius: 4px;
   border: 1px dashed var(--sky-300);
 }
@@ -178,7 +160,7 @@ body {
 .notebook-tabs {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.3rem;
   list-style: none;
 }
 
@@ -186,12 +168,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.38rem 0.72rem;
+  padding: 0.4rem 0.72rem;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid transparent;
   transition: all 0.16s ease;
 }
@@ -207,7 +189,6 @@ body {
   color: var(--accent-strong);
   background: var(--sky-50);
   border-color: var(--sky-200);
-  transform: translateY(-1px);
 }
 
 .theme-btn {
@@ -217,7 +198,7 @@ body {
   background: var(--bg-kraft);
   color: var(--text-secondary);
   border: 1.5px solid var(--cutout-border);
-  padding: 0.38rem 0.75rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.73rem;
@@ -229,7 +210,7 @@ body {
 .theme-btn:hover {
   border-color: var(--accent);
   color: var(--accent-strong);
-  transform: rotate(1deg);
+  background: var(--sky-50);
 }
 
 /* Main Collage Board Canvas */
@@ -238,67 +219,67 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3.25rem;
+  gap: 3.5rem;
 }
 
-/* Reusable Washi Tape & Cutout Modifiers */
+/* Washi Tape Accents — Positioned cleanly without overlapping text */
 .washi-tape {
   position: absolute;
-  height: 22px;
-  width: 105px;
+  height: 18px;
+  width: 90px;
   background: var(--tape-sky);
   border-left: 1.5px dashed var(--tape-border);
   border-right: 1.5px dashed var(--tape-border);
-  backdrop-filter: blur(2px);
   z-index: 4;
   pointer-events: none;
 }
 
 .washi-tape.top-center {
-  top: -11px;
+  top: -9px;
   left: 50%;
   transform: translateX(-50%) rotate(-1.5deg);
 }
 
 .washi-tape.top-left {
-  top: -10px;
-  left: 24px;
-  width: 86px;
-  transform: rotate(-4deg);
+  top: -9px;
+  left: 28px;
+  width: 76px;
+  transform: rotate(-2.5deg);
 }
 
 .washi-tape.top-right {
-  top: -10px;
-  right: 24px;
-  width: 86px;
-  transform: rotate(3.5deg);
+  top: -9px;
+  right: 28px;
+  width: 76px;
+  transform: rotate(2.5deg);
 }
 
 .washi-tape.neutral {
   background: var(--tape-neutral);
-  border-color: rgba(148, 163, 184, 0.35);
+  border-color: rgba(148, 163, 184, 0.4);
 }
 
 /* Handwritten Note Annotation */
 .hand-note {
   font-family: var(--font-hand);
-  font-size: 1.32rem;
+  font-size: 1.3rem;
   color: var(--accent-strong);
   line-height: 1.15;
   display: inline-block;
 }
 
-/* 01 // Hero Collage Spread (2 Cutout Pieces) */
+/* 01 // Hero Collage Spread */
 .hero-collage {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
   gap: 1.75rem;
   align-items: stretch;
+  padding-top: 0.5rem;
 }
 
-/* Left Hero Cutout: Lined Notebook Page */
+/* Left Hero Cutout: Clean Lined Notebook Sheet with Left Margin Strip */
 .hero-main-cutout {
-  background-color: var(--bg-lined);
+  background-color: var(--bg-paper);
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0px,
@@ -307,29 +288,11 @@ body {
     var(--rule-line) 32px
   );
   border: 1.5px solid var(--cutout-border);
+  border-left: 6px solid var(--accent);
   border-radius: 10px;
-  padding: 2.4rem 2.25rem 2.25rem 3.35rem;
-  box-shadow: var(--shadow-cutout);
+  padding: 2.25rem 2.25rem 2.25rem 2.35rem;
+  box-shadow: var(--paper-stack-shadow);
   position: relative;
-  transform: rotate(-0.45deg);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hero-main-cutout:hover {
-  transform: rotate(0deg);
-  box-shadow: var(--shadow-lifted);
-}
-
-/* Red/Sky Margin Line inside Hero Cutout */
-.hero-main-cutout::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 38px;
-  width: 1.5px;
-  background: var(--sky-300);
-  pointer-events: none;
 }
 
 .cutout-stamp-row {
@@ -349,24 +312,26 @@ body {
   letter-spacing: 0.06em;
   color: var(--accent-strong);
   border: 1.5px solid var(--accent);
-  padding: 0.15rem 0.55rem;
+  padding: 0.16rem 0.55rem;
   border-radius: 4px;
-  background: var(--bg-paper);
-  transform: rotate(-1.5deg);
+  background: var(--sky-50);
 }
 
 .hero-title {
-  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-size: clamp(1.95rem, 3.6vw, 2.65rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 0.45rem;
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+  color: var(--text-primary);
 }
 
 .sky-marker {
-  background: linear-gradient(104deg, rgba(56, 189, 248, 0) 0.9%, var(--sky-200) 2.4%, rgba(56, 189, 248, 0.35) 96%, transparent 98%);
-  padding: 0.05rem 0.35rem;
-  border-radius: 4px;
+  background: var(--sky-100);
+  color: var(--accent-strong);
+  padding: 0.02rem 0.4rem;
+  border-radius: 6px;
+  border-bottom: 2px solid var(--sky-400);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -375,10 +340,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.45rem;
-  margin-bottom: 1.15rem;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
 }
 
@@ -386,29 +351,22 @@ body {
   background: var(--accent);
   color: #fff;
   font-weight: 700;
-  padding: 0.18rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.2rem 0.65rem;
+  border-radius: 5px;
 }
 
 .hero-bio {
-  font-size: 0.96rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.4rem;
   line-height: 1.75;
-  background: rgba(255, 255, 255, 0.45);
-  padding: 0.5rem 0.65rem;
-  border-radius: 6px;
-}
-
-[data-theme="dark"] .hero-bio {
-  background: rgba(15, 23, 42, 0.55);
 }
 
 .focus-stickers {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .sticker-tag {
@@ -418,22 +376,14 @@ body {
   color: var(--text-primary);
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
-  padding: 0.25rem 0.6rem;
+  padding: 0.26rem 0.65rem;
   border-radius: 999px;
-  box-shadow: 1px 2px 0 var(--sky-200);
-  transition: transform 0.15s ease;
-}
-
-.sticker-tag:nth-child(odd) {
-  transform: rotate(-1deg);
-}
-
-.sticker-tag:nth-child(even) {
-  transform: rotate(1.2deg);
+  box-shadow: 2px 2px 0 var(--sky-200);
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
 .sticker-tag:hover {
-  transform: rotate(0deg) scale(1.04);
+  transform: translateY(-2px);
   border-color: var(--accent);
 }
 
@@ -441,63 +391,61 @@ body {
 .hero-side-stack {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.35rem;
+  justify-content: space-between;
 }
 
 .polaroid-card {
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
-  border-radius: 8px;
-  padding: 1rem 1rem 1.25rem;
-  box-shadow: var(--shadow-polaroid);
+  border-radius: 10px;
+  padding: 1.2rem 1.15rem 1.1rem;
+  box-shadow: var(--shadow-cutout);
   position: relative;
-  transform: rotate(1.35deg);
-  transition: transform 0.25s ease;
-}
-
-.polaroid-card:hover {
-  transform: rotate(0deg);
 }
 
 .polaroid-window {
-  background: linear-gradient(135deg, var(--sky-100), var(--bg-sticky));
+  background: var(--bg-sticky);
   border: 1px solid var(--sky-200);
-  border-radius: 5px;
-  padding: 1.15rem;
-  margin-bottom: 0.85rem;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-secondary);
 }
 
 .polaroid-stat-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.65rem;
-  margin-top: 0.65rem;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
 }
 
 .stat-box {
   background: var(--bg-paper);
   border: 1px dashed var(--sky-300);
-  padding: 0.45rem 0.55rem;
-  border-radius: 4px;
+  padding: 0.5rem 0.6rem;
+  border-radius: 5px;
 }
 
 .stat-box strong {
   display: block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--accent-strong);
+  margin-bottom: 0.1rem;
 }
 
 .stat-box span {
-  font-size: 0.67rem;
+  display: block;
+  font-size: 0.66rem;
   color: var(--text-muted);
+  line-height: 1.3;
 }
 
 .polaroid-caption {
   font-family: var(--font-hand);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
   text-align: center;
 }
@@ -505,18 +453,17 @@ body {
 .sky-sticky-note {
   background: var(--bg-sticky);
   border: 1.5px solid var(--sky-200);
-  border-bottom-right-radius: 22px;
-  padding: 1.1rem 1.2rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.15rem 1.2rem;
   box-shadow: var(--shadow-cutout);
   position: relative;
-  transform: rotate(-1.2deg);
 }
 
 .sky-sticky-note p {
-  font-family: var(--font-hand);
-  font-size: 1.28rem;
-  color: var(--accent-strong);
-  line-height: 1.25;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
 }
 
 /* Action Buttons */
@@ -531,7 +478,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.55rem 1rem;
+  padding: 0.56rem 1.05rem;
   border-radius: 6px;
   font-size: 0.84rem;
   font-weight: 700;
@@ -539,7 +486,7 @@ body {
   cursor: pointer;
   transition: all 0.16s ease;
   border: 1.5px solid var(--cutout-border);
-  box-shadow: 2px 3px 0 rgba(14, 165, 233, 0.18);
+  box-shadow: 2px 2px 0 rgba(14, 165, 233, 0.18);
 }
 
 .btn-primary {
@@ -550,8 +497,8 @@ body {
 
 .btn-primary:hover {
   background: var(--sky-600);
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 5px 0 rgba(14, 165, 233, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 rgba(14, 165, 233, 0.3);
 }
 
 .btn-outline {
@@ -563,10 +510,10 @@ body {
   border-color: var(--accent);
   color: var(--accent-strong);
   background: var(--sky-50);
-  transform: translate(-1px, -1px);
+  transform: translateY(-1px);
 }
 
-/* Section Headers — Pinned Label Strips */
+/* Section Headers — Pinned Cutout Label Strips */
 .collage-section {
   position: relative;
 }
@@ -577,18 +524,17 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-label-cutout {
   display: inline-block;
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
+  border-left: 5px solid var(--accent);
   padding: 0.55rem 1.15rem;
   border-radius: 8px;
-  box-shadow: 3px 4px 0 var(--sky-200);
-  transform: rotate(-0.8deg);
-  position: relative;
+  box-shadow: var(--shadow-cutout);
 }
 
 .section-index {
@@ -602,7 +548,7 @@ body {
 }
 
 .section-title {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -637,13 +583,13 @@ body {
 
 .filter-btn {
   background: var(--bg-kraft);
-  border: 1px dashed var(--cutout-border);
+  border: 1px solid var(--cutout-border);
   color: var(--text-secondary);
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 700;
-  padding: 0.38rem 0.75rem;
-  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.16s ease;
 }
@@ -656,8 +602,7 @@ body {
 .filter-btn.active {
   background: var(--accent);
   color: #ffffff;
-  border: 1px solid var(--sky-600);
-  transform: rotate(-1deg);
+  border-color: var(--sky-600);
 }
 
 .search-box {
@@ -689,61 +634,53 @@ body {
   color: var(--text-faint);
 }
 
-/* Collage Projects Grid — Taped Scrapbook Cards */
+/* Collage Projects Grid — Crisp Taped Scrapbook Cards */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 1.65rem;
+  padding-top: 0.4rem;
 }
 
 .project-card {
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
-  border-radius: 8px;
-  padding: 1.5rem 1.35rem 1.25rem;
+  border-radius: 10px;
+  padding: 1.55rem 1.35rem 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--shadow-cutout);
   position: relative;
   cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* Alternating Collage Rotations */
-.project-card:nth-child(3n + 1) {
-  transform: rotate(-0.75deg);
-}
-.project-card:nth-child(3n + 2) {
-  transform: rotate(0.65deg);
+.project-card:nth-child(even) {
   background: var(--bg-lined);
-}
-.project-card:nth-child(3n + 3) {
-  transform: rotate(-0.4deg);
 }
 
 .project-card:hover {
-  transform: rotate(0deg) translateY(-4px) scale(1.01);
+  transform: translateY(-4px);
   border-color: var(--accent);
   box-shadow: var(--shadow-lifted);
-  z-index: 5;
 }
 
 .card-tape {
   position: absolute;
-  top: -10px;
+  top: -9px;
   left: 50%;
-  width: 92px;
-  height: 20px;
+  width: 84px;
+  height: 17px;
   background: var(--tape-sky);
   border-left: 1.5px dashed var(--tape-border);
   border-right: 1.5px dashed var(--tape-border);
-  transform: translateX(-50%) rotate(-2deg);
+  transform: translateX(-50%) rotate(-1.5deg);
   pointer-events: none;
 }
 
 .project-card:nth-child(even) .card-tape {
-  transform: translateX(-50%) rotate(2.2deg);
+  transform: translateX(-50%) rotate(1.5deg);
   background: var(--tape-neutral);
 }
 
@@ -752,7 +689,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
 }
@@ -760,7 +697,7 @@ body {
 .card-code {
   color: var(--accent-strong);
   background: var(--sky-50);
-  padding: 0.12rem 0.48rem;
+  padding: 0.14rem 0.5rem;
   border-radius: 4px;
   border: 1px dashed var(--sky-300);
   font-weight: 700;
@@ -775,12 +712,12 @@ body {
   font-size: 1.12rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .card-hand-sub {
   font-family: var(--font-hand);
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   color: var(--accent-strong);
   margin-bottom: 0.55rem;
   display: block;
@@ -789,17 +726,17 @@ body {
 .card-desc {
   font-size: 0.86rem;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.58;
   margin-bottom: 0.85rem;
 }
 
 .card-problem-snippet {
-  font-size: 0.78rem;
+  font-size: 0.79rem;
   color: var(--text-secondary);
   background: var(--sky-50);
-  border: 1px dashed var(--sky-300);
+  border-left: 3px solid var(--accent);
   padding: 0.5rem 0.65rem;
-  border-radius: 6px;
+  border-radius: 0 6px 6px 0;
   margin-bottom: 1rem;
 }
 
@@ -823,7 +760,7 @@ body {
 .stack-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.32rem;
+  gap: 0.35rem;
 }
 
 .stack-pill {
@@ -831,7 +768,7 @@ body {
   font-size: 0.68rem;
   color: var(--text-primary);
   background: var(--bg-paper);
-  padding: 0.16rem 0.46rem;
+  padding: 0.16rem 0.48rem;
   border-radius: 4px;
   border: 1px solid var(--cutout-border);
 }
@@ -846,48 +783,27 @@ body {
   gap: 0.3rem;
 }
 
-/* 03 // Technical Skills Collage — Pinned Index Cards & Stickers */
+/* 03 // Technical Skills Collage — Crisp Index Cards */
 .skills-ledger {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.35rem;
+  gap: 1.25rem;
 }
 
 .skill-group {
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
+  border-top: 3px solid var(--accent);
   border-radius: 8px;
-  padding: 1.25rem 1.15rem 1.15rem;
+  padding: 1.15rem;
   position: relative;
   box-shadow: var(--shadow-cutout);
-  transition: transform 0.2s ease;
-}
-
-.skill-group:nth-child(odd) {
-  transform: rotate(-0.55deg);
-}
-
-.skill-group:nth-child(even) {
-  transform: rotate(0.55deg);
-  background: var(--bg-lined);
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
 .skill-group:hover {
-  transform: rotate(0deg) translateY(-2px);
+  transform: translateY(-2px);
   border-color: var(--accent);
-}
-
-.skill-group::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 22px;
-  width: 58px;
-  height: 15px;
-  background: var(--tape-sky);
-  border-left: 1px dashed var(--tape-border);
-  border-right: 1px dashed var(--tape-border);
-  transform: rotate(-2deg);
 }
 
 .skill-group-header {
@@ -896,7 +812,7 @@ body {
   justify-content: space-between;
   margin-bottom: 0.8rem;
   padding-bottom: 0.45rem;
-  border-bottom: 1.5px dashed var(--cutout-border);
+  border-bottom: 1px dashed var(--cutout-border);
 }
 
 .skill-group-title {
@@ -910,7 +826,7 @@ body {
   font-size: 0.68rem;
   color: var(--accent-strong);
   background: var(--sky-50);
-  padding: 0.1rem 0.38rem;
+  padding: 0.1rem 0.4rem;
   border-radius: 4px;
 }
 
@@ -924,7 +840,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-secondary);
-  background: var(--bg-paper);
+  background: var(--bg-kraft);
   border: 1px solid var(--cutout-border);
   padding: 0.24rem 0.52rem;
   border-radius: 5px;
@@ -936,32 +852,23 @@ body {
   color: var(--accent-strong);
   border: 1px solid var(--sky-300);
   font-weight: 700;
-  box-shadow: 1px 2px 0 var(--sky-200);
 }
 
 /* 04 // Academic Scrapbook & Off-Duty Workbench Collage */
 .two-col-notebook {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 1.75rem;
+  gap: 1.65rem;
+  padding-top: 0.4rem;
 }
 
 .notebook-panel {
   background: var(--bg-paper);
   border: 1.5px solid var(--cutout-border);
   border-radius: 10px;
-  padding: 1.65rem 1.5rem;
+  padding: 1.75rem 1.5rem 1.5rem;
   box-shadow: var(--shadow-cutout);
   position: relative;
-}
-
-.notebook-panel.tilted-left {
-  transform: rotate(-0.5deg);
-  background: var(--bg-lined);
-}
-
-.notebook-panel.tilted-right {
-  transform: rotate(0.65deg);
 }
 
 .panel-label {
@@ -971,18 +878,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--accent-strong);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.15rem;
   display: inline-block;
   background: var(--sky-50);
   border: 1px dashed var(--sky-300);
-  padding: 0.2rem 0.6rem;
+  padding: 0.22rem 0.65rem;
   border-radius: 4px;
 }
 
 .timeline-list {
   list-style: none;
   position: relative;
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
   border-left: 2px dashed var(--accent);
   display: flex;
   flex-direction: column;
@@ -996,8 +903,8 @@ body {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -1.52rem;
-  top: 0.3rem;
+  left: -1.56rem;
+  top: 0.32rem;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1006,7 +913,7 @@ body {
 }
 
 .timeline-title {
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   font-weight: 800;
   color: var(--text-primary);
 }
@@ -1039,16 +946,13 @@ body {
   padding: 0.75rem 0.85rem;
   background: var(--bg-sticky);
   border-radius: 6px;
-  border: 1px dashed var(--sky-300);
+  border: 1px solid var(--sky-200);
   font-size: 0.85rem;
   color: var(--text-secondary);
-  box-shadow: 2px 3px 0 rgba(14, 165, 233, 0.1);
 }
 
 .field-note-item:nth-child(even) {
-  transform: rotate(-0.6deg);
-  background: var(--bg-paper);
-  border-style: solid;
+  background: var(--bg-kraft);
   border-color: var(--cutout-border);
 }
 
@@ -1067,7 +971,8 @@ body {
 /* 05 // Postcard Contact Cutout */
 .contact-card {
   background: var(--bg-paper);
-  border: 2px solid var(--cutout-border);
+  border: 1.5px solid var(--cutout-border);
+  border-top: 5px solid var(--accent);
   border-radius: 10px;
   padding: 2rem;
   display: flex;
@@ -1076,23 +981,11 @@ body {
   justify-content: space-between;
   gap: 1.25rem;
   position: relative;
-  box-shadow: var(--shadow-polaroid);
-  transform: rotate(-0.35deg);
-  /* Postcard airmail sky-blue dashed trim */
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--sky-200) 0,
-    var(--sky-200) 10px,
-    transparent 10px,
-    transparent 20px
-  );
-  background-size: 100% 5px;
-  background-repeat: no-repeat;
-  background-position: top;
+  box-shadow: var(--paper-stack-shadow);
 }
 
 .contact-info h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
 }
@@ -1143,22 +1036,23 @@ body {
 }
 
 .spec-modal {
-  background: var(--bg-lined);
+  background: var(--bg-paper);
   border: 2px solid var(--cutout-border);
+  border-top: 5px solid var(--accent);
   border-radius: 10px;
   max-width: 660px;
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
-  padding: 2.1rem;
+  padding: 2rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
   position: relative;
-  transform: rotate(-0.5deg) translateY(10px);
+  transform: translateY(10px);
   transition: transform 0.2s ease;
 }
 
 .spec-modal-backdrop.open .spec-modal {
-  transform: rotate(0deg) translateY(0);
+  transform: translateY(0);
 }
 
 .modal-header {
@@ -1172,7 +1066,7 @@ body {
 }
 
 .modal-close {
-  background: var(--bg-paper);
+  background: var(--bg-kraft);
   border: 1.5px solid var(--cutout-border);
   color: var(--text-primary);
   width: 34px;
@@ -1210,16 +1104,17 @@ body {
 
 .modal-features li {
   position: relative;
-  padding-left: 1.15rem;
+  padding-left: 1.25rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
 .modal-features li::before {
-  content: "✎";
+  content: "→";
   position: absolute;
   left: 0;
   color: var(--accent);
+  font-family: var(--font-mono);
 }
 
 @media (max-width: 860px) {
@@ -1229,11 +1124,7 @@ body {
   }
 
   .hero-main-cutout {
-    padding: 1.85rem 1.35rem;
-  }
-
-  .hero-main-cutout::after {
-    display: none;
+    padding: 1.75rem 1.35rem;
   }
 
   .notebook-tabs {

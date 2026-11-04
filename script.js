@@ -353,5 +353,14 @@ if (copyEmailBtn) {
   });
 }
 
+// Active Navigation Tab Highlighting on Click & Scroll
+const navLinks = document.querySelectorAll(".notebook-tabs a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.forEach((l) => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
+
 // Initial render
 renderProjects();
