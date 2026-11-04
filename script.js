@@ -393,3 +393,48 @@ if ("IntersectionObserver" in window) {
   );
   observed.forEach((el) => io.observe(el));
 }
+// Brand logos on the Stack & Tooling chips (Simple Icons + Devicon CDNs; chips with no known logo stay text-only)
+const SI = (slug) => `https://cdn.simpleicons.org/${slug}`;
+const DEV = (path) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}.svg`;
+const LOGO_MAP = [
+  [/^react/i, SI("react")],
+  [/^tailwind/i, SI("tailwindcss")],
+  [/^inertia/i, SI("inertia")],
+  [/^javascript/i, SI("javascript")],
+  [/^html5/i, SI("html5")],
+  [/^css3/i, DEV("css3/css3-original")],
+  [/^bootstrap/i, SI("bootstrap")],
+  [/^vite/i, SI("vite")],
+  [/^laravel/i, SI("laravel")],
+  [/^php$/i, SI("php")],
+  [/^java\b/i, SI("openjdk")],
+  [/^c$/i, SI("c")],
+  [/^mysql/i, SI("mysql")],
+  [/^mariadb/i, SI("mariadb")],
+  [/^apache$/i, SI("apache")],
+  [/^xampp/i, SI("xampp")],
+  [/^microsoft azure/i, DEV("azure/azure-original")],
+  [/^github pages/i, SI("githubpages")],
+  [/^wordpress/i, SI("wordpress")],
+  [/^woocommerce/i, SI("woocommerce")],
+  [/^vs code/i, DEV("vscode/vscode-original")],
+  [/^phpstorm/i, SI("phpstorm")],
+  [/^netbeans/i, SI("apachenetbeanside")],
+  [/^git\b/i, SI("git")],
+  [/^windows/i, DEV("windows8/windows8-original")],
+  [/^linux mint/i, SI("linuxmint")],
+  [/^ubuntu/i, SI("ubuntu")]
+];
+
+document.querySelectorAll("#stack .skill-chip").forEach((chip) => {
+  const label = chip.textContent.trim();
+  const match = LOGO_MAP.find(([re]) => re.test(label));
+  if (!match) return;
+  const img = document.createElement("img");
+  img.src = match[1];
+  img.alt = "";
+  img.className = "chip-logo";
+  img.loading = "lazy";
+  img.onerror = () => img.remove();
+  chip.prepend(img);
+});
