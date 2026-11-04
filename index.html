@@ -118,7 +118,14 @@
           <span class="washi-tape top-right" aria-hidden="true"></span>
           <!-- PLACEHOLDER: drop your portrait at assets/profile.jpg (square, ~600x600) -->
           <div class="photo-slot">
-            <span>Add your photo<small>assets/profile.jpg</small></span>
+            <span class="photo-placeholder">
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <circle cx="32" cy="24" r="11" />
+                <path d="M10 58c0-12.2 9.8-20 22-20s22 7.8 22 20z" />
+              </svg>
+              Profile photo here
+              <small>assets/profile.jpg</small>
+            </span>
             <img src="assets/profile.jpg" alt="Portrait of Vinze Norbert Siega" onerror="this.remove()" />
           </div>
           <div class="polaroid-window">
