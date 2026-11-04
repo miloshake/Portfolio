@@ -1,6 +1,6 @@
 const PROJECTS = [
   {
-    id: "CUTOUT-01",
+    id: "PRJ-01",
     title: "FinalTermLaravel",
     subtitle: "↳ Legacy PHP to Laravel + Inertia.js SPA migration",
     category: "fullstack",
@@ -18,7 +18,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-02",
+    id: "PRJ-02",
     title: "BuildIT (buildits.app)",
     subtitle: "↳ Cloud PC storefront on Azure B1 VM",
     category: "cloud",
@@ -36,7 +36,7 @@ const PROJECTS = [
     liveUrl: "https://buildits.app"
   },
   {
-    id: "CUTOUT-03",
+    id: "PRJ-03",
     title: "KoneKT",
     subtitle: "↳ Talent directory & technical role matching",
     category: "fullstack",
@@ -54,7 +54,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-04",
+    id: "PRJ-04",
     title: "Conference Registration Monitoring",
     subtitle: "↳ Desktop real-time attendee verification",
     category: "systems",
@@ -72,7 +72,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-05",
+    id: "PRJ-05",
     title: "BankoSantiago",
     subtitle: "↳ ACID-compliant banking transaction model",
     category: "fullstack",
@@ -89,7 +89,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-06",
+    id: "PRJ-06",
     title: "Authio",
     subtitle: "↳ Hardened authentication & RBAC starter",
     category: "fullstack",
@@ -106,7 +106,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-07",
+    id: "PRJ-07",
     title: "PolyCloth",
     subtitle: "↳ Interactive apparel catalog & cart state",
     category: "cloud",
@@ -123,7 +123,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-08",
+    id: "PRJ-08",
     title: "PC Part Picker DB Schema",
     subtitle: "↳ Normalized 5-entity hardware relational schema",
     category: "systems",
@@ -140,7 +140,7 @@ const PROJECTS = [
     github: "https://github.com/miloshake"
   },
   {
-    id: "CUTOUT-09",
+    id: "PRJ-09",
     title: "CLSU CASS IDF/MDF Rack Design",
     subtitle: "↳ Multi-floor academic network rack elevation",
     category: "systems",
@@ -158,6 +158,7 @@ const PROJECTS = [
   }
 ];
 
+let lastFocused = null;
 let currentCategory = "all";
 let searchQuery = "";
 
@@ -192,14 +193,14 @@ function renderProjects() {
   });
 
   if (projectCountNote) {
-    projectCountNote.textContent = `✎ pinned ${filtered.length} of ${PROJECTS.length} cutouts`;
+    projectCountNote.textContent = `Showing ${filtered.length} of ${PROJECTS.length} projects`;
   }
 
   if (filtered.length === 0) {
     projectsGrid.innerHTML = `
       <div class="notebook-panel" style="grid-column: 1 / -1; text-align: center; padding: 2.25rem;">
         <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
-          No scrapbook cutouts matched "${searchQuery}". Try clearing the filter.
+          No projects match that search. Try clearing the filter.
         </p>
       </div>
     `;
@@ -209,7 +210,7 @@ function renderProjects() {
   projectsGrid.innerHTML = filtered
     .map(
       (proj) => `
-      <article class="project-card" data-id="${proj.id}" tabindex="0" role="button" aria-label="Inspect ${proj.title} cutout notes">
+      <article class="project-card" data-id="${proj.id}" tabindex="0" role="button" aria-label="View details for ${proj.title}">
         <span class="card-tape" aria-hidden="true"></span>
         <div class="card-top">
           <div class="card-meta">
@@ -232,7 +233,7 @@ function renderProjects() {
               .join("")}
             ${proj.stack.length > 5 ? `<span class="stack-pill">+${proj.stack.length - 5}</span>` : ""}
           </div>
-          <span class="card-inspect-link">Read Clipped Notes →</span>
+          <span class="card-inspect-link">View details →</span>
         </div>
       </article>
     `
@@ -268,17 +269,22 @@ function openSpecModal(projectId) {
     linksHtml += `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Site (buildits.app) ↗</a>`;
   }
   if (proj.github) {
-    linksHtml += `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub (@miloshake) ↗</a>`;
+    linksHtml += `<a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile ↗</a>`;
   }
   modalLinks.innerHTML = linksHtml;
 
   modalBackdrop.classList.add("open");
   modalBackdrop.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  lastFocused = document.activeElement;
+  modalCloseBtn.focus();
 }
 
 function closeSpecModal() {
   modalBackdrop.classList.remove("open");
   modalBackdrop.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if (lastFocused) lastFocused.focus();
 }
 
 if (modalCloseBtn) {
@@ -321,11 +327,11 @@ function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("vinze-notebook-theme", theme);
   if (themeLabel) {
-    themeLabel.textContent = theme === "dark" ? "BOARD: NIGHT MAT" : "BOARD: PAPER COLLAGE";
+    themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
   }
 }
 
-const savedTheme = localStorage.getItem("vinze-notebook-theme") || "light";
+const savedTheme = localStorage.getItem("vinze-notebook-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 applyTheme(savedTheme);
 
 if (themeBtn) {
@@ -364,3 +370,19 @@ navLinks.forEach((link) => {
 
 // Initial render
 renderProjects();
+
+// Keep the navbar highlight in sync with the section currently in view
+const sectionIds = ["index", "projects", "stack", "education", "contact"];
+const observed = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === "#" + entry.target.id));
+      });
+    },
+    { rootMargin: "-35% 0px -55% 0px" }
+  );
+  observed.forEach((el) => io.observe(el));
+}

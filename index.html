@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vinze - Front-End Developer | Notebook Collage (@miloshake)</title>
+  <title>Vinze - Front-End Developer | Portfolio (@miloshake)</title>
   <meta
     name="description"
     content="Portfolio of Vinze Norbert Siega (Miloshake) — Front-End & Full-Stack Developer, Software QA & Systems Enthusiast at Central Luzon State University (CLSU)."
@@ -21,25 +21,25 @@
   <!-- Sticky Scrapbook Index Bar -->
   <header class="top-bar" role="banner">
     <a href="#index" class="brand-mark">
-      <span class="brand-sticker">VINZE</span>
-      <span>Vinze — Front-End Developer</span>
+      <span class="brand-sticker">V</span>
+      <span>Vinze</span>
       <span class="brand-handle">@miloshake</span>
     </a>
 
     <nav aria-label="Scrapbook Sections">
       <ul class="notebook-tabs">
-        <li><a href="#index" class="active"><span class="tab-num">01</span>Dossier</a></li>
-        <li><a href="#projects"><span class="tab-num">02</span>Cutouts</a></li>
-        <li><a href="#stack"><span class="tab-num">03</span>Stack</a></li>
-        <li><a href="#education"><span class="tab-num">04</span>Scrapbook</a></li>
-        <li><a href="#contact"><span class="tab-num">05</span>Postcard</a></li>
+        <li><a href="#index" class="active"><span class="tab-num">01</span>About</a></li>
+        <li><a href="#projects"><span class="tab-num">02</span>Projects</a></li>
+        <li><a href="#stack"><span class="tab-num">03</span>Skills</a></li>
+        <li><a href="#education"><span class="tab-num">04</span>Background</a></li>
+        <li><a href="#contact"><span class="tab-num">05</span>Contact</a></li>
       </ul>
     </nav>
 
     <div class="top-actions">
-      <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle collage board theme">
+      <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle light/dark theme">
         <span aria-hidden="true">◐</span>
-        <span id="theme-label">BOARD: PAPER COLLAGE</span>
+        <span id="theme-label">Light</span>
       </button>
     </div>
   </header>
@@ -53,8 +53,8 @@
         <span class="washi-tape top-center" aria-hidden="true"></span>
 
         <div class="cutout-stamp-row">
-          <span class="stamp-badge">FIELD LOG // CLSU-BSIT</span>
-          <span class="hand-note">✎ sky-blue sketchbook edition</span>
+          <span class="stamp-badge">BSIT • CLSU</span>
+          
         </div>
 
         <h1 class="hero-title" id="hero-heading">
@@ -84,7 +84,7 @@
         </div>
 
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Explore 09 Clipped Projects ↓</a>
+          <a href="#projects" class="btn btn-primary">View projects ↓</a>
           <a href="https://github.com/miloshake" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             GitHub (@miloshake) ↗
           </a>
@@ -108,30 +108,30 @@
           <span class="washi-tape top-right" aria-hidden="true"></span>
           <div class="polaroid-window">
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
-              <strong>ID // MILOSHAKE</strong>
-              <span>NUEVA ECIJA, PH</span>
+              <strong>AT A GLANCE</strong>
+              <span>Nueva Ecija, PH</span>
             </div>
-            <div>DEPT // CLSU College of Engineering (IT)</div>
+            <div>CLSU College of Engineering · IT</div>
             <div class="polaroid-stat-grid">
               <div class="stat-box">
                 <strong>09</strong>
-                <span>Pinned Projects</span>
+                <span>Projects</span>
               </div>
               <div class="stat-box">
-                <strong>:3307</strong>
-                <span>MySQL Multi-Instance</span>
+                <strong>Laravel</strong>
+                <span>+ React / Inertia</span>
               </div>
               <div class="stat-box">
-                <strong>ISTQB</strong>
-                <span>&amp; IEEE 829 QA</span>
+                <strong>QA</strong>
+                <span>IEEE 829 / ISTQB</span>
               </div>
               <div class="stat-box">
                 <strong>Azure B1</strong>
-                <span>Cloud Deployment</span>
+                <span>Cloud hosting</span>
               </div>
             </div>
           </div>
-          <div class="polaroid-caption">"clean UI on the surface, structured SQL underneath"</div>
+          
         </div>
 
         <div class="sky-sticky-note">
@@ -147,15 +147,15 @@
     <section class="collage-section" id="projects" aria-labelledby="projects-heading">
       <div class="section-header">
         <div class="section-label-cutout">
-          <span class="section-index">02 // Clipped Project Cutouts</span>
-          <h2 class="section-title" id="projects-heading">Selected Works &amp; Case Files</h2>
+          <span class="section-index">02 // Projects</span>
+          <h2 class="section-title" id="projects-heading">Selected Work</h2>
         </div>
-        <span class="section-note" id="project-count-note">✎ pinned 9 of 9 cutouts</span>
+        <span class="section-note" id="project-count-note">Showing 9 of 9 projects</span>
       </div>
 
       <div class="project-controls">
-        <div class="filter-tabs" role="tablist" aria-label="Filter project cutouts by category">
-          <button type="button" class="filter-btn active" data-filter="all">All Cutouts (9)</button>
+        <div class="filter-tabs" role="group" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn active" data-filter="all">All (9)</button>
           <button type="button" class="filter-btn" data-filter="fullstack">Web &amp; Full-Stack</button>
           <button type="button" class="filter-btn" data-filter="cloud">Cloud &amp; E-Commerce</button>
           <button type="button" class="filter-btn" data-filter="systems">Database, Desktop &amp; Network</button>
@@ -180,10 +180,10 @@
     <section class="collage-section" id="stack" aria-labelledby="stack-heading">
       <div class="section-header">
         <div class="section-label-cutout">
-          <span class="section-index">03 // Tooling &amp; QA Stickers</span>
-          <h2 class="section-title" id="stack-heading">Technical Stack &amp; Standards</h2>
+          <span class="section-index">03 // Skills</span>
+          <h2 class="section-title" id="stack-heading">Stack &amp; Tooling</h2>
         </div>
-        <span class="section-note">✎ 08 taped index cards</span>
+        <span class="section-note">8 categories</span>
       </div>
 
       <div class="skills-ledger">
@@ -305,17 +305,17 @@
     <section class="collage-section" id="education" aria-labelledby="education-heading">
       <div class="section-header">
         <div class="section-label-cutout">
-          <span class="section-index">04 // Academic Log &amp; Personal Scrapbook</span>
-          <h2 class="section-title" id="education-heading">Milestones &amp; Off-Duty Workbench</h2>
+          <span class="section-index">04 // Background</span>
+          <h2 class="section-title" id="education-heading">Education &amp; Interests</h2>
         </div>
-        <span class="section-note">✎ life outside the terminal</span>
+        <span class="section-note">beyond the terminal</span>
       </div>
 
       <div class="two-col-notebook">
         <!-- Left Scrapbook Sheet: Education & Seminars -->
         <div class="notebook-panel tilted-left">
           <span class="washi-tape top-left" aria-hidden="true"></span>
-          <div class="panel-label">📌 Academic &amp; Engineering Milestones</div>
+          <div class="panel-label">Education &amp; Seminars</div>
           <ul class="timeline-list">
             <li class="timeline-item">
               <div class="timeline-title">Bachelor of Science in Information Technology (BSIT)</div>
@@ -328,7 +328,7 @@
               <div class="timeline-title">Software QA &amp; Testing Standards</div>
               <div class="timeline-sub">IEEE 829 &amp; ISTQB Lifecycle Practice</div>
               <div class="timeline-meta">
-                Structured test plan authoring, test case specifications, defect reporting, and automated verification with KaneAI.
+                Familiarity with IEEE 829 test documentation and ISTQB testing cycles; automated testing with LambdaTest KaneAI.
               </div>
             </li>
             <li class="timeline-item">
@@ -347,30 +347,30 @@
         <!-- Right Scrapbook Sheet: Off-Duty Hobbies & Hardware Modding -->
         <div class="notebook-panel tilted-right">
           <span class="washi-tape top-right neutral" aria-hidden="true"></span>
-          <div class="panel-label">🕹️ Off-Duty Workbench &amp; Clippings</div>
+          <div class="panel-label">Interests</div>
           <ul class="field-notes-list">
             <li class="field-note-item">
               <span class="field-note-tag">MODDING</span>
               <div>
-                <strong>Arcade Controller Hardware Modding</strong> — Customizing Sanwa JLF levers, tension springs, switches, and arcade stick chassis tuning.
+                <strong>Arcade Controller Hardware Modding</strong> — Sanwa JLF customization and chassis tuning.
               </div>
             </li>
             <li class="field-note-item">
               <span class="field-note-tag">FGC / RHYTHM</span>
               <div>
-                <strong>Competitive Gaming</strong> — Frame-data labbing in <em>Tekken 8</em> and high-BPM precision in <em>osu!mania</em> &amp; <em>Arcaea</em>.
+                <strong>Competitive Gaming</strong> — Tekken 8, plus rhythm games <em>osu!mania</em> and <em>Arcaea</em>.
               </div>
             </li>
             <li class="field-note-item">
               <span class="field-note-tag">KEYS</span>
               <div>
-                <strong>Digital Piano</strong> — Practicing pieces on a weighted 88-key <em>Roland FP-10</em>.
+                <strong>Digital Piano</strong> — Playing on a <em>Roland FP-10</em>.
               </div>
             </li>
             <li class="field-note-item">
               <span class="field-note-tag">RIGS &amp; FILM</span>
               <div>
-                <strong>Desktop Hardware &amp; Cinema</strong> — PC component troubleshooting, custom builds, and cinema appreciation.
+                <strong>Desktop Hardware &amp; Cinema</strong> — Desktop hardware troubleshooting and cinema.
               </div>
             </li>
           </ul>
@@ -382,17 +382,17 @@
     <section class="collage-section" id="contact" aria-labelledby="contact-heading">
       <div class="section-header">
         <div class="section-label-cutout">
-          <span class="section-index">05 // Airmail Postcard</span>
-          <h2 class="section-title" id="contact-heading">Send a Note</h2>
+          <span class="section-index">05 // Contact</span>
+          <h2 class="section-title" id="contact-heading">Get in Touch</h2>
         </div>
-        <span class="section-note">✎ open for opportunities</span>
+        <span class="section-note"></span>
       </div>
 
       <div class="contact-card">
         <div class="contact-info">
           <h3>Let's craft responsive UIs &amp; dependable systems.</h3>
           <p>
-            Available for front-end or full-stack internships, software QA testing projects, and developer collaborations.
+            Reach out about front-end or full-stack work, software QA, or collaborations.
           </p>
         </div>
         <div class="contact-links">
@@ -420,7 +420,7 @@
 
       <footer class="sheet-footer">
         <span>© 2026 Vinze Norbert Siega (Miloshake) • Front-End &amp; Full-Stack Developer</span>
-        <span>SLEEK NOTEBOOK COLLAGE EDITION • SKY BLUE ACCENTS</span>
+        <span>CLSU • Nueva Ecija, PH</span>
       </footer>
     </section>
   </main>
@@ -438,12 +438,12 @@
       <div class="modal-header">
         <div>
           <div class="card-meta" style="margin-bottom: 0.4rem;">
-            <span class="card-code" id="modal-code">CUTOUT-01</span>
+            <span class="card-code" id="modal-code">PRJ-01</span>
             <span class="card-category" id="modal-category">Full-Stack</span>
           </div>
           <h3 id="modal-title" style="font-size: 1.3rem; font-weight: 800;">Project Title</h3>
         </div>
-        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close clipped notes">
+        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close project details">
           ✕
         </button>
       </div>
